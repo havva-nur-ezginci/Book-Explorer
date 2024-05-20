@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "180787258362",
+    "project_id": "grup81-ai-jam",
+    "storage_bucket": "grup81-ai-jam.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180787258362:android:dfc65f9fab8af9807aba43",
+        "android_client_info": {
+          "package_name": "com.example.grup81_ai_jam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180787258362-nliavpn3ac7hvbca7qu7r9mhq0vp8sef.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grup81_ai_jam",
+            "certificate_hash": "d10d0f9b4fb4491810132d3f864bd47d494aad61"
+          }
+        },
+        {
+          "client_id": "180787258362-t3imomonh4giajnkp562hqc0oesnglo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzgqLtilD8EKuz7MKSX7meUCaL9FO5iyk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180787258362-t3imomonh4giajnkp562hqc0oesnglo2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "180787258362-gd6criqk0hiefpg84ldbvbrv75jt7jis.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.grup81AiJam"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
