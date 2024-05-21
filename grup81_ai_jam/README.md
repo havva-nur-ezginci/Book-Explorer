@@ -22,3 +22,7 @@ Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authen
 ANA SAYFA: Kullanıcılar için register, login işlemleri gerçekleştirilebilir.
 
 ![1-homePage](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/cb394da5-7acf-42a7-902c-3b1c9b350ed9)
+
+Register Sayfası:
+
+![2-registerPage](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/d5733a0c-e7a1-4901-b4d2-92e5cbc6fc86)
