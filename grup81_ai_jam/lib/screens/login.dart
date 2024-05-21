@@ -44,8 +44,8 @@ class _LoginState extends State<Login> {
           ),
         );
         if (result != null) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const Welcome()));
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => Welcome(email: result.email!)));
         }
       }
     }

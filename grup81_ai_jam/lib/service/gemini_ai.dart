@@ -11,13 +11,13 @@ class GeminiAI {
     return true;
   }
 
-  Future<String> fetchText() async {
+  Future<String> fetchText(String profilInfo) async {
     if (apiControl()) {
       // ... (Gemini API'den metin alma işlemi) ...
       final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
       final content = [
         Content.text(
-            'bana komedi türünde kitap öner.her kitap için kitap adı,yazarı ve kısa kitap hakkında bilgi içersin')
+            '$profilInfo bana kitap öner. Her kitap için kitap adı,yazarı,kitah hakkında kısa bilgi içersin.')
       ];
 
       final response = await model.generateContent(content);

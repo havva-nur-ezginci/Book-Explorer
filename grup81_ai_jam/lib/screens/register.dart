@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grup81_ai_jam/constans/color.dart';
+import 'package:grup81_ai_jam/models/user.dart';
 import 'package:grup81_ai_jam/screens/welcome.dart';
+import 'package:grup81_ai_jam/service/cloud_firestore.dart';
 import 'package:grup81_ai_jam/service/firebase_auth.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -13,6 +15,7 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   final AuthService _firebaseService = AuthService();
+  final DatabaseService _cloudFirabese = DatabaseService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _favoritebookController = TextEditingController();
@@ -46,14 +49,31 @@ class _RegisterState extends State<Register> {
         );
         if (result != null) {
           print("Registered: ${result.email}");
+          saveRegisterProfileInfo();
           Navigator.of(context).push(MaterialPageRoute(
             builder: (context) {
-              return const Welcome();
+              return Welcome(email: result.email!);
             },
           ));
         }
       }
     }
+  }
+
+  void saveRegisterProfileInfo() {
+    _cloudFirabese.addUser(NewProfil(
+        email: _emailController.text,
+        favoriteAuthor: "",
+        favoriteBook: _favoritebookController.text,
+        age: null));
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text('Kaydedildi'),
+        duration: Duration(
+            seconds: 2), // Mesajın ne kadar süreyle görüneceğini belirler
+      ),
+    );
   }
 
   @override
@@ -97,7 +117,6 @@ class _RegisterState extends State<Register> {
                     controller: _favoritebookController,
                     decoration:
                         const InputDecoration(labelText: "Favorite Book"),
-                    obscureText: true,
                     validator: (value) =>
                         value!.isEmpty ? "Enter an book" : null,
                   ),

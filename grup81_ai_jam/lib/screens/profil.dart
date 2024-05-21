@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:grup81_ai_jam/constans/color.dart';
+import 'package:grup81_ai_jam/models/user.dart';
 import 'package:grup81_ai_jam/screens/welcome.dart';
 import 'package:grup81_ai_jam/service/cloud_firestore.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Profil extends StatefulWidget {
-  const Profil({super.key});
+  final String email;
+  const Profil({Key? key, required this.email}) : super(key: key);
 
   @override
   State<Profil> createState() => _ProfilState();
@@ -73,8 +75,12 @@ class _ProfilState extends State<Profil> {
           cursorColor: Theme.of(context).cardColor,
           maxLength: 30,
           decoration: const InputDecoration(
-            icon: Icon(Icons.phone),
-            labelText: 'Name text',
+            icon: ImageIcon(
+              AssetImage('lib/assets/images/author.png'),
+              color: Colors.black,
+              size: 38,
+            ),
+            labelText: 'Favorite Author text',
             helperText: 'Helper text',
             suffixIcon: Icon(
               Icons.check_circle,
@@ -87,12 +93,11 @@ class _ProfilState extends State<Profil> {
           cursorColor: Theme.of(context).cardColor,
           maxLength: 30,
           decoration: const InputDecoration(
-            icon: Icon(Icons.favorite),
-            labelText: 'Company text',
+            icon: Icon(Icons.auto_stories_sharp),
+            labelText: 'Favorite Book text',
             helperText: 'Helper text',
-            errorText: 'Error message',
             suffixIcon: Icon(
-              Icons.error,
+              Icons.check_circle,
             ),
           ),
           onChanged: (_) => _checkForm(),
@@ -129,8 +134,11 @@ class _ProfilState extends State<Profil> {
   }
 
   void _saveProfileInfo() {
-    _cloudFirabese.addUser(_text1Controller.text, _text2Controller.text,
-        int.parse(_text3Controller.text));
+    _cloudFirabese.addUser(NewProfil(
+        email: widget.email,
+        favoriteAuthor: _text1Controller.text,
+        favoriteBook: _text2Controller.text,
+        age: int.parse(_text3Controller.text)));
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -139,7 +147,9 @@ class _ProfilState extends State<Profil> {
             seconds: 2), // Mesajın ne kadar süreyle görüneceğini belirler
       ),
     );
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => const Welcome()));
+    Navigator.of(context).push(MaterialPageRoute(
+        builder: (context) => Welcome(
+              email: widget.email,
+            )));
   }
 }

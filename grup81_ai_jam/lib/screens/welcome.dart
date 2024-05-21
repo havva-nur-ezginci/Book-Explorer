@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:grup81_ai_jam/constans/color.dart';
+import 'package:grup81_ai_jam/models/user.dart';
 import 'package:grup81_ai_jam/screens/home.dart';
 import 'package:grup81_ai_jam/screens/profil.dart';
+import 'package:grup81_ai_jam/service/cloud_firestore.dart';
 import 'package:grup81_ai_jam/service/gemini_ai.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Welcome extends StatefulWidget {
-  const Welcome({super.key});
+  final String email;
+
+  Welcome({Key? key, required this.email}) : super(key: key);
 
   @override
   State<Welcome> createState() => _WelcomeState();
 }
 
 class _WelcomeState extends State<Welcome> {
-  GeminiAI ai_service = GeminiAI();
+  final DatabaseService _cloudFirabese = DatabaseService();
+  GeminiAI aiService = GeminiAI();
   List<String>? kitaplar;
   bool isLoading = false;
   String? errorMessage;
@@ -66,7 +71,8 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => const Profil()),
+                    MaterialPageRoute(
+                        builder: (context) => Profil(email: widget.email)),
                   );
                 },
               ),
@@ -107,9 +113,12 @@ class _WelcomeState extends State<Welcome> {
               });
 
               try {
-                String fetchedText = await ai_service.fetchText();
+                String profilInfo =
+                    await _cloudFirabese.getProfil(widget.email);
+                print("======profil bilgisi:$profilInfo");
+                String fetchedText = await aiService.fetchText(profilInfo);
                 setState(() {
-                  kitaplar = ai_service.split(fetchedText);
+                  kitaplar = aiService.split(fetchedText);
                   isLoading = false;
                 });
               } catch (error) {
