@@ -13,7 +13,7 @@ Kitap Kaşifi ile;
 - Farklı türlerde kitaplar keşfedebilir, yeni ufuklara yelken açabilirsiniz.
 - Bilgi ve kelime haznemizi genişletebilir, daha akıcı ve etkili bir şekilde iletişim kurabiliriz.
 
-Uygulama ana fonksiyonu: Kullanıcı kaydı gerçekleştirildikten sonra firebase deki kullanıcı bilgileri kullanılarak AI api aracılığıyla kullanıcılarına kişiselleştirilmiş kitap önerileri yapılmaktadır.
+# Uygulama ana fonksiyonu: Kullanıcı kaydı gerçekleştirildikten sonra firebase deki kullanıcı bilgileri kullanılarak AI api aracılığıyla kullanıcılarına kişiselleştirilmiş kitap önerileri yapılmaktadır.
 
 ## Juriye Not
 Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authentication, Cloud Firestore ve Gemini AI api servislerine bağlantıları yapılmıştır. Favoriler sayfası ile kullanıcı zevklerine dair daha fazla bilgi alınması hedeflenmiştir. Ancak zaman ve tecrübe yetersizliğinden favoriler sayfası oluşturulamamıştır. 
