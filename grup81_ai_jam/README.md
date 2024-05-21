@@ -20,3 +20,4 @@ Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authen
 
 ## Ürün Özellikleri
 ANA SAYFA: Kullanıcılar için register, login işlemleri gerçekleştirilebilir.
+![1-homePage](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/cb394da5-7acf-42a7-902c-3b1c9b350ed9)
