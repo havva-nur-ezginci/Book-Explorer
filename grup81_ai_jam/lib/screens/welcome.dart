@@ -39,7 +39,7 @@ class _WelcomeState extends State<Welcome> {
                 "Kitap Keşfine Hoşgeldin",
                 style: TextStyle(
                   fontFamily: "TextStyleFont",
-                  fontSize: 28,
+                  fontSize: 24,
                   color: Colors.black,
                 ),
               ),
