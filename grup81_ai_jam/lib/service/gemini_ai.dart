@@ -17,7 +17,7 @@ class GeminiAI {
       final model = GenerativeModel(model: 'gemini-pro', apiKey: apiKey);
       final content = [
         Content.text(
-            '$profilInfo bana kitap öner. Her kitap için kitap adı,yazarı,kitah hakkında kısa bilgi içersin.')
+            'Bana kitap önerir misin? Her kitap için kitap adı,yazarı,kitap hakkında kısa bilgi içersin. Ayrıca $profilInfo')
       ];
 
       final response = await model.generateContent(content);
