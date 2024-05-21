@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grup81_ai_jam/constans/color.dart';
 import 'package:grup81_ai_jam/screens/home.dart';
 import 'package:grup81_ai_jam/screens/profil.dart';
+import 'package:grup81_ai_jam/service/gemini_ai.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Welcome extends StatefulWidget {
@@ -12,6 +13,11 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  GeminiAI ai_service = GeminiAI();
+  List<String>? kitaplar;
+  bool isLoading = false;
+  String? errorMessage;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,56 +28,37 @@ class _WelcomeState extends State<Welcome> {
           toolbarHeight: 70.0,
           centerTitle: true,
           backgroundColor: HexColor(headerColor),
-          title:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            const Text(
-              "Keşfe Hoşgeldin",
-              style: TextStyle(
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Kitap Keşfine Hoşgeldin",
+                style: TextStyle(
                   fontFamily: "TextStyleFont",
                   fontSize: 28,
-                  color: Colors.black),
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.logout,
-                size: 28,
+                  color: Colors.black,
+                ),
               ),
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-            ),
-          ]),
+              IconButton(
+                icon: const Icon(
+                  Icons.logout,
+                  size: 28,
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomAppBar(
           color: HexColor(headerColor),
-          height: 60.0, // Yüksekliği 60 piksele ayarla
-          child: Row(children: [
-            IconButton(
-                icon: const Icon(
-                  Icons.menu,
-                  color: Colors.black,
-                  size: 35,
-                ),
-                onPressed: () {}),
-            const Spacer(),
-            /*  IconButton(
-                icon: Image.asset(
-                  'lib/assets/images/icons-heart.png',
-                  color: Colors.black,
-                  fit: BoxFit.cover,
-                  width: 24,
-                  height: 40,
-                ),
-                onPressed: () {}),*/
-            IconButton(
-                icon: const Icon(
-                  Icons.favorite,
-                  color: Colors.black,
-                  size: 40,
-                ),
-                onPressed: () {}),
-            IconButton(
+          height: 60.0,
+          child: Row(
+            children: [
+              IconButton(
                 icon: const Icon(
                   Icons.person,
                   color: Colors.black,
@@ -79,33 +66,88 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const Profil()));
-                }),
-          ]),
+                    MaterialPageRoute(builder: (context) => const Profil()),
+                  );
+                },
+              ),
+              const Spacer(),
+              IconButton(
+                icon: const Icon(
+                  Icons.favorite,
+                  color: Colors.black,
+                  size: 40,
+                ),
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
-        floatingActionButton: FloatingActionButton(
-          backgroundColor: HexColor(backgroundColor),
-          elevation: 6.0, // Adjust elevation as needed
-          shape: const OvalBorder(
-            // Add border here
-            side: BorderSide(
-              color: Colors.white, // Border color
-              width: 4.0, // Border width
+        floatingActionButton: SizedBox(
+          width: 65,
+          height: 65,
+          child: FloatingActionButton(
+            backgroundColor: HexColor(backgroundColor),
+            elevation: 6.0,
+            shape: const OvalBorder(
+              side: BorderSide(
+                color: Colors.black,
+                width: 4.0,
+              ),
             ),
+            child: Image.asset(
+              'lib/assets/images/ai.png',
+              color: Colors.black,
+              width: 45,
+              height: 45,
+            ),
+            onPressed: () async {
+              setState(() {
+                isLoading = true;
+                errorMessage = null;
+              });
+
+              try {
+                String fetchedText = await ai_service.fetchText();
+                setState(() {
+                  kitaplar = ai_service.split(fetchedText);
+                  isLoading = false;
+                });
+              } catch (error) {
+                setState(() {
+                  errorMessage = 'Error: $error';
+                  isLoading = false;
+                });
+              }
+            },
           ),
-          child: const Icon(
-            Icons.camera_alt,
-            color: Colors.black,
-            size: 40,
-          ),
-          onPressed: () {},
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        body: const SingleChildScrollView(
-          child: Column(
-            children: [],
-          ),
-        ),
+        body: isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : errorMessage != null
+                ? Center(child: Text(errorMessage!))
+                : kitaplar != null
+                    ? ListView.builder(
+                        itemCount: kitaplar!.length,
+                        itemBuilder: (context, index) {
+                          return Card(
+                            margin: const EdgeInsets.all(10.0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: kitaplar![index]
+                                    .split('\n')
+                                    .map((line) => Text(line))
+                                    .toList(),
+                              ),
+                            ),
+                          );
+                        },
+                      )
+                    : const Center(
+                        child: Text('No data yet. Press the button to fetch.'),
+                      ),
       ),
     );
   }
