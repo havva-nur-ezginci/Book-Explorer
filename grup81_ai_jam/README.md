@@ -4,15 +4,19 @@
 Kitap Kaşifi
 
 ## Ürün Açıklaması
+Kitap Kaşifi uygulamamız, kullanıcı bilgilerini kullanarak gemini ai aracılığıyla kitap okurlarına kişiselleştirilmiş kitap önerisinde bulunmaktadır. Kullanıcılar favori kitap, yazar ve kullanıcı yaş bilgileri ışığında kendi zevklerine benzer kitap önerileri alabilmektedir. Kitap Kaşifi uygulamamıza kullanıcılar register, login, logout işlemlerini de firebase üzerinden yapabilmektedir.Ayrıca Kitap Kaşifi uygulamamız cloud firebase de kullanıcılara ait bilgileri tutabilmektedir.
 
-Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authentication ve Cloud Firestore servislerine bağlantıları yapılmıştır.
+Kitap okumak, insanlığın en eski ve en değerli alışkanlıklarından biridir. Bilgi edinmenin, hayal gücünü beslemenin ve farklı bakış açıları kazanmanın kapılarını açar. Ne yazık ki, modern yaşamın koşuşturmacası içinde kitap okumaya zaman ayırmak zorlaşabiliyor. Kitap okumak, sadece boş zaman aktivitesi değil, aynı zamanda zihinsel ve kişisel gelişimimiz için de son derece önemlidir. Kitap Kaşifi, yapay zekâ (AI) teknolojisi ile çalışan, kullanıcılara kişiselleştirilmiş kitap önerileri sunan bir uygulamamız ile kitap okumayı daha eğlenceli bir hale getirmeye çalıştık.
 
-A few resources to get you started if this is your first Flutter project:
+Kitap Kaşifi ile;
+- Kişisel zevkinize ve ilgi alanlarınıza en uygun kitapları keşfedebilirsiniz.
+- Farklı türlerde kitaplar keşfedebilir, yeni ufuklara yelken açabilirsiniz.
+- Bilgi ve kelime haznemizi genişletebilir, daha akıcı ve etkili bir şekilde iletişim kurabiliriz.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Uygulama ana fonksiyonu: Kullanıcı kaydı gerçekleştirildikten sonra firebase deki kullanıcı bilgileri kullanılarak AI api aracılığıyla kullanıcılarına kişiselleştirilmiş kitap önerileri yapılmaktadır.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Juriye Not
+Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authentication, Cloud Firestore ve Gemini AI api servislerine bağlantıları yapılmıştır. Favoriler sayfası ile kullanıcı zevklerine dair daha fazla bilgi alınması hedeflenmiştir. Ancak zaman ve tecrübe yetersizliğinden favoriler sayfası oluşturulamamıştır. 
+
 ## Ürün Özellikleri
+ANA SAYFA: Kullanıcılar için register, login işlemleri gerçekleştirilebilir.
