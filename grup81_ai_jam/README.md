@@ -36,3 +36,6 @@ Welcome Sayfası:
 
 ![4-welcome](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/77276783-4ae5-4f9f-8243-b71bf2cd3794)
 
+Profil Sayfası:
+
+![5 1-Profil](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/9da08c1c-94e4-4e75-bf06-5acc6be83286)
