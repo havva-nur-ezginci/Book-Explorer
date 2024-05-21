@@ -1,7 +1,8 @@
 # OUA - AI JAM - Grup-81
 
 ## Ürün İsmi
-Kitap Kaşifi
+
+### Kitap Kaşifi
 
 ## Ürün Açıklaması
 Kitap Kaşifi uygulamamız, kullanıcı bilgilerini kullanarak gemini ai aracılığıyla kitap okurlarına kişiselleştirilmiş kitap önerisinde bulunmaktadır. Kullanıcılar favori kitap, favori yazar ve kullanıcı yaş bilgileri ışığında kendi zevklerine benzer kitap önerileri alabilmektedir. Kitap Kaşifi uygulamamıza kullanıcılar register, login, logout işlemlerini de firebase üzerinden yapabilmektedir.Ayrıca Kitap Kaşifi uygulamamız cloud firebase de kullanıcılara ait bilgileri tutabilmektedir.
