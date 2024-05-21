@@ -31,3 +31,8 @@ Register Sayfası:
 Login Sayfası:
 
 ![3-login](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/0a6bc504-9a88-4838-8afc-ea1b6fed44cc)
+
+Welcome Sayfası:
+
+![4-welcome](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/77276783-4ae5-4f9f-8243-b71bf2cd3794)
+
