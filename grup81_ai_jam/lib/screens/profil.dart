@@ -93,7 +93,10 @@ class _ProfilState extends State<Profil> {
           cursorColor: Theme.of(context).cardColor,
           maxLength: 30,
           decoration: const InputDecoration(
-            icon: Icon(Icons.auto_stories_sharp),
+            icon: Icon(
+              Icons.auto_stories_sharp,
+              size: 35,
+            ),
             labelText: 'Favorite Book text',
             helperText: 'Helper text',
             suffixIcon: Icon(
@@ -107,7 +110,11 @@ class _ProfilState extends State<Profil> {
           cursorColor: Theme.of(context).cardColor,
           maxLength: 3, //max 3 basamaklı olsun
           decoration: const InputDecoration(
-            icon: Icon(Icons.email),
+            icon: ImageIcon(
+              AssetImage('lib/assets/images/time.png'),
+              color: Colors.black,
+              size: 50,
+            ),
             labelText: 'Age text',
             helperText: 'Helper text',
             suffixIcon: Icon(

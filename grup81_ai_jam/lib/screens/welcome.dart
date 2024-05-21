@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:grup81_ai_jam/constans/color.dart';
-import 'package:grup81_ai_jam/models/user.dart';
 import 'package:grup81_ai_jam/screens/home.dart';
 import 'package:grup81_ai_jam/screens/profil.dart';
 import 'package:grup81_ai_jam/service/cloud_firestore.dart';
@@ -141,13 +140,22 @@ class _WelcomeState extends State<Welcome> {
                         itemBuilder: (context, index) {
                           return Card(
                             margin: const EdgeInsets.all(10.0),
+                            elevation: 8,
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: kitaplar![index]
                                     .split('\n')
-                                    .map((line) => Text(line))
+                                    .map((line) => Text(
+                                          line,
+                                          style: const TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black87,
+                                            decorationColor: Colors.transparent,
+                                          ),
+                                        ))
                                     .toList(),
                               ),
                             ),
