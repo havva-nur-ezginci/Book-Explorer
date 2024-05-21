@@ -45,3 +45,7 @@ AI Öneri:
 ![6-ai](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/704ff860-4e8f-4675-bea0-eda8cd0cb2e1)    
 ![6 2-ai](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/4d137e7d-99d4-4b2a-95dd-ca2f01eb8235)
 
+Firebase :
+
+![7-db-profils](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/2844235b-d27d-45d4-a7c1-d1fb379c3216)
+![7-firebase-auth](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/f2d52597-3a60-4bfd-943d-25682d6fd9e1)
