@@ -41,5 +41,7 @@ Profil Sayfası:
 ![5 1-Profil](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/9da08c1c-94e4-4e75-bf06-5acc6be83286)
 
 AI Öneri:
-![6-ai](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/704ff860-4e8f-4675-bea0-eda8cd0cb2e1)
+
+![6-ai](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/704ff860-4e8f-4675-bea0-eda8cd0cb2e1)    
+![6 2-ai](https://github.com/havva-nur-ezginci/OUA_APP_JAM_81/assets/62055621/4d137e7d-99d4-4b2a-95dd-ca2f01eb8235)
 
