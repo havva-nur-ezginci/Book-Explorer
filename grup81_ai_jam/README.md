@@ -1,10 +1,11 @@
-# grup81_ai_jam
+# OUA - AI JAM - Grup-81
 
-A new Flutter project.
+## Ürün İsmi
+Kitap Kaşifi
 
-## Getting Started
+## Ürün Açıklaması
 
-This project is a starting point for a Flutter application.
+Kullanıcı sayfaların arayüzleri, algoritmaları kodlanmış, firebase Authentication ve Cloud Firestore servislerine bağlantıları yapılmıştır.
 
 A few resources to get you started if this is your first Flutter project:
 
@@ -14,3 +15,4 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+## Ürün Özellikleri
