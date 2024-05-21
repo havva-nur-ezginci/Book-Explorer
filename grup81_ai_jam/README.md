@@ -4,7 +4,7 @@
 Kitap Kaşifi
 
 ## Ürün Açıklaması
-Kitap Kaşifi uygulamamız, kullanıcı bilgilerini kullanarak gemini ai aracılığıyla kitap okurlarına kişiselleştirilmiş kitap önerisinde bulunmaktadır. Kullanıcılar favori kitap, yazar ve kullanıcı yaş bilgileri ışığında kendi zevklerine benzer kitap önerileri alabilmektedir. Kitap Kaşifi uygulamamıza kullanıcılar register, login, logout işlemlerini de firebase üzerinden yapabilmektedir.Ayrıca Kitap Kaşifi uygulamamız cloud firebase de kullanıcılara ait bilgileri tutabilmektedir.
+Kitap Kaşifi uygulamamız, kullanıcı bilgilerini kullanarak gemini ai aracılığıyla kitap okurlarına kişiselleştirilmiş kitap önerisinde bulunmaktadır. Kullanıcılar favori kitap, favori yazar ve kullanıcı yaş bilgileri ışığında kendi zevklerine benzer kitap önerileri alabilmektedir. Kitap Kaşifi uygulamamıza kullanıcılar register, login, logout işlemlerini de firebase üzerinden yapabilmektedir.Ayrıca Kitap Kaşifi uygulamamız cloud firebase de kullanıcılara ait bilgileri tutabilmektedir.
 
 Kitap okumak, insanlığın en eski ve en değerli alışkanlıklarından biridir. Bilgi edinmenin, hayal gücünü beslemenin ve farklı bakış açıları kazanmanın kapılarını açar. Ne yazık ki, modern yaşamın koşuşturmacası içinde kitap okumaya zaman ayırmak zorlaşabiliyor. Kitap okumak, sadece boş zaman aktivitesi değil, aynı zamanda zihinsel ve kişisel gelişimimiz için de son derece önemlidir. Kitap Kaşifi, yapay zekâ (AI) teknolojisi ile çalışan, kullanıcılara kişiselleştirilmiş kitap önerileri sunan bir uygulamamız ile kitap okumayı daha eğlenceli bir hale getirmeye çalıştık.
 
