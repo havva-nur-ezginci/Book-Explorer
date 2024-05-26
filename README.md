@@ -1,4 +1,4 @@
-# OUA - AI APP JAM - Grup-81
+# OUA - AI JAM - Grup-81
 
 ## Ürün İsmi
 
